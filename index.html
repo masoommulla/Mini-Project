@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZEN-MIND - Mental Health Support for Teens</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header__content">
+                <div class="header__logo">
+                    <h1>ZEN-MIND</h1>
+                </div>
+                <nav class="header__nav">
+                    <a href="#why-zen-mind" class="nav-link">Why ZEN-MIND</a>
+                    <a href="#therapist" class="nav-link">Therapists</a>
+                    <a href="#community" class="nav-link">Community</a>
+                    <a href="#about" class="nav-link">About Us</a>
+                </nav>
+                <div class="header__actions">
+                    <button id="theme-toggle" class="btn btn--outline theme-toggle" aria-label="Toggle theme">
+                        <span class="theme-icon">🌙</span>
+                    </button>
+                    <!-- Auth buttons (shown when not logged in) -->
+                    <div id="auth-buttons" class="auth-buttons">
+                        <button id="login-btn" class="btn btn--outline">Login</button>
+                        <button id="signup-btn" class="btn btn--primary">Sign Up</button>
+                    </div>
+                    <!-- User info (shown when logged in) -->
+                    <div id="user-info" class="user-info hidden">
+                        <span id="user-welcome" class="user-welcome"></span>
+                        <button id="profile-btn" class="btn btn--outline">Profile</button>
+                        <button id="appointments-btn" class="btn btn--secondary">Appointments</button>
+                        <button id="logout-btn" class="btn btn--secondary">Logout</button>
+                    </div>
+                    <button class="btn btn--primary emergency-btn">Emergency Help</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero__content">
+                <h2 class="hero__title">You're Not Alone in This Journey</h2>
+                <p class="hero__description">
+                    ZEN-MIND provides safe, confidential mental health support for teenagers through AI-powered guidance and professional care. Get the help you deserve, when you need it.
+                </p>
+                <div class="hero__actions">
+                    <button id="start-chat" class="btn btn--primary btn--lg">Start a Conversation</button>
+                    <a href="#why-zen-mind" class="btn btn--outline btn--lg">Learn More</a>
+                </div>
+                <div class="hero__stats">
+                    <div class="stat">
+                        <span class="stat__number">24/7</span>
+                        <span class="stat__label">Support Available</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat__number">100%</span>
+                        <span class="stat__label">Confidential</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat__number">Safe</span>
+                        <span class="stat__label">Environment</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why ZEN-MIND Section -->
+    <section id="why-zen-mind" class="section why-section">
+        <div class="container">
+            <h2 class="section__title">Why ZEN-MIND Matters</h2>
+            <p class="section__subtitle">Mental health support shouldn't wait. Early intervention can make all the difference.</p>
+            
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <h3>1 in 7</h3>
+                    <p>Teenagers experience a mental disorder</p>
+                </div>
+                <div class="stat-card">
+                    <h3>50%</h3>
+                    <p>Of all lifetime mental illnesses begin at age 14</p>
+                </div>
+                <div class="stat-card">
+                    <h3>51%</h3>
+                    <p>Of youth with mental health conditions get treatment</p>
+                </div>
+                <div class="stat-card">
+                    <h3>20%</h3>
+                    <p>Of teens experience depression by age 17</p>
+                </div>
+            </div>
+
+            <div class="features-grid">
+                <div class="feature-card">
+                    <h3>AI-Powered Support</h3>
+                    <p>24/7 AI-powered initial support and screening to help you understand your feelings and provide immediate guidance.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Professional Connection</h3>
+                    <p>Direct connection to licensed therapists when you need human support and professional intervention.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Complete Privacy</h3>
+                    <p>Complete confidentiality and data protection. Your conversations and personal information are always secure.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Evidence-Based Resources</h3>
+                    <p>Evidence-based coping strategies and educational content tailored specifically for teenagers.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Therapist Section -->
+    <section id="therapist" class="section therapist-section">
+        <div class="container">
+            <h2 class="section__title">Professional Therapist Support</h2>
+            <p class="section__subtitle">Connect with licensed mental health professionals who understand teens</p>
+            
+            <!-- Therapist Cards Grid -->
+            <div id="therapist-grid" class="therapist-grid">
+                <!-- Therapist cards will be dynamically inserted here -->
+            </div>
+            
+            <!-- Default therapist info when no therapists are available -->
+            <div id="default-therapist-info" class="therapist-content">
+                <div class="therapist-info">
+                    <h3>Licensed Professional Support</h3>
+                    <p>Our network of licensed therapists specializes in adolescent mental health. They understand the unique challenges teens face and provide age-appropriate treatment approaches.</p>
+                    
+                    <h4>How It Works:</h4>
+                    <ul class="process-list">
+                        <li>Start with our AI screening to assess your needs</li>
+                        <li>Get matched with a suitable therapist</li>
+                        <li>Schedule sessions that work with your schedule</li>
+                        <li>Receive ongoing support and resources</li>
+                    </ul>
+                </div>
+                
+                <div class="safety-protocols">
+                    <h3>Safety & Crisis Intervention</h3>
+                    <p>Your safety is our top priority. Our crisis intervention protocols ensure immediate help when needed.</p>
+                    
+                    <div class="crisis-resources">
+                        <div class="crisis-item">
+                            <strong>Suicide & Crisis Lifeline:</strong>
+                            <a href="tel:988" class="crisis-link">988</a>
+                        </div>
+                        <div class="crisis-item">
+                            <strong>Crisis Text Line:</strong>
+                            <span>Text HOME to 741741</span>
+                        </div>
+                        <p class="crisis-note">24/7 crisis support available</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Community Section -->
+    <section id="community" class="section community-section">
+        <div class="container">
+            <h2 class="section__title">Safe Community Support</h2>
+            <p class="section__subtitle">Connect with peers in a safe, moderated environment</p>
+            
+            <div class="community-features">
+                <div class="community-card">
+                    <h3>Peer Support Groups</h3>
+                    <p>Join moderated peer support groups where you can share experiences, learn from others, and build meaningful connections with teens who understand what you're going through.</p>
+                </div>
+                
+                <div class="community-card">
+                    <h3>Safe Sharing Space</h3>
+                    <p>Share your experiences in a judgment-free environment with trained moderators ensuring safety and respect for all community members.</p>
+                </div>
+                
+                <div class="community-card">
+                    <h3>Group Activities</h3>
+                    <p>Participate in guided group activities, workshops, and discussions designed to build coping skills and foster positive relationships.</p>
+                </div>
+                
+                <div class="community-card">
+                    <h3>Success Stories</h3>
+                    <p>Read inspiring stories from other teens who have overcome challenges and found hope through community support and professional help.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section id="about" class="section about-section">
+        <div class="container">
+            <h2 class="section__title">About ZEN-MIND</h2>
+            
+            <div class="about-content">
+                <div class="about-card">
+                    <h3>Our Mission</h3>
+                    <p>ZEN-MIND combines cutting-edge AI technology with human expertise to provide accessible, immediate mental health support for teenagers during their most vulnerable years.</p>
+                </div>
+                
+                <div class="about-card">
+                    <h3>Our Approach</h3>
+                    <p>We believe in early intervention, peer support, and professional guidance working together to create a comprehensive support system that meets teens where they are.</p>
+                </div>
+                
+                <div class="about-card">
+                    <h3>Safety First</h3>
+                    <p>All interactions are confidential, secure, and designed with teen safety as our top priority. We maintain the highest standards of privacy and professional oversight.</p>
+                </div>
+            </div>
+            
+            <div class="contact-info">
+                <h3>Get in Touch</h3>
+                <p>Have questions about our services? Need additional support? Contact our team.</p>
+                <div class="contact-methods">
+                    <div class="contact-item">
+                        <strong>Email:</strong> support@zen-mind.org
+                    </div>
+                    <div class="contact-item">
+                        <strong>Phone:</strong> 1-800-ZEN-MIND
+                    </div>
+                    <div class="contact-item">
+                        <strong>Hours:</strong> 24/7 AI Support, Professional staff 8AM-8PM EST
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Enhanced Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__content">
+                <div class="footer__section">
+                    <h3>ZEN-MIND</h3>
+                    <p>Mental health support for teenagers with compassion and expertise.</p>
+                </div>
+                
+                <div class="footer__section">
+                    <h4>Quick Links</h4>
+                    <div class="footer__links">
+                        <a href="#" target="_blank">Home</a>
+                        <a href="#about" target="_blank">About Us</a>
+                        <a href="#therapist" target="_blank">Therapists</a>
+                        <a href="#community" target="_blank">Community</a>
+                        <a href="#" target="_blank">Privacy Policy</a>
+                    </div>
+                </div>
+                
+                <div class="footer__section">
+                    <h4>Connect With Us</h4>
+                    <div class="social-links">
+                        <a href="https://t.me/DepressionAnxietyCare" target="_blank" class="social-link" aria-label="Telegram">
+                            <i class="fab fa-telegram"></i>
+                        </a>
+                        <a href="#instagram" target="_blank" class="social-link" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#twitter" target="_blank" class="social-link" aria-label="Twitter">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                    </div>
+                    <h6 style="margin-top: 5px;">Crafted By Masoom</h6>
+                </div>
+            </div>
+            <div class="footer__bottom">
+                <p>&copy; 2025 ZEN-MIND. All rights reserved. Professional mental health services.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating Chat Button -->
+    <button id="chat-btn" class="chat-btn" aria-label="Open chat">💬</button>
+
+    <!-- Appointment Modal -->
+    <div id="appointment-modal" class="modal hidden">
+        <div class="modal-content appointment-modal">
+            <div class="appointment-header">
+                <h3>Book Appointment</h3>
+                <button id="close-appointment" class="close-btn">&times;</button>
+            </div>
+            <div class="appointment-body">
+                <form id="appointment-form" class="appointment-form">
+                    <div id="therapist-info" class="therapist-selection">
+                        <!-- Therapist info will be populated here -->
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="patient-name" class="form-label">Full Name *</label>
+                        <input type="text" id="patient-name" class="form-control" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="patient-age" class="form-label">Age *</label>
+                        <input type="number" id="patient-age" class="form-control" min="13" max="19" required>
+                        <small class="form-text">Must be between 13-19 years</small>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="patient-mobile" class="form-label">Mobile Number *</label>
+                        <input type="tel" id="patient-mobile" class="form-control" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="appointment-date" class="form-label">Appointment Date *</label>
+                        <input type="date" id="appointment-date" class="form-control" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="appointment-time" class="form-label">Appointment Time *</label>
+                        <input type="time" id="appointment-time" class="form-control" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="patient-address" class="form-label">Address *</label>
+                        <textarea id="patient-address" class="form-control" rows="3" required></textarea>
+                    </div>
+                    
+                    <button type="submit" class="btn btn--primary btn--full-width">Book Appointment</button>
+                </form>
+                <div id="appointment-error" class="error-message hidden"></div>
+                <div id="appointment-success" class="success-message hidden"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Appointments Dashboard Modal -->
+    <div id="appointments-modal" class="modal hidden">
+        <div class="modal-content appointments-dashboard">
+            <div class="appointments-header">
+                <h3>My Appointments</h3>
+                <button id="close-appointments" class="close-btn">&times;</button>
+            </div>
+            <div class="appointments-body">
+                <div id="appointments-list" class="appointments-list">
+                    <!-- Appointments will be populated here -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Therapist Detail Modal -->
+    <div id="therapist-detail-modal" class="modal hidden">
+        <div class="modal-content therapist-detail">
+            <div class="therapist-detail-header">
+                <h3 id="detail-therapist-name">Therapist Name</h3>
+                <button id="close-therapist-detail" class="close-btn">&times;</button>
+            </div>
+            <div class="therapist-detail-body">
+                <div id="therapist-detail-content">
+                    <!-- Detailed therapist info will be populated here -->
+                </div>
+                <div class="therapist-actions">
+                    <button id="book-appointment-btn" class="btn btn--primary">Book Appointment</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Login Modal -->
+    <div id="login-modal" class="modal hidden">
+        <div class="modal-content auth-modal">
+            <div class="auth-header">
+                <h3>Login to ZEN-MIND</h3>
+                <button id="close-login" class="close-btn">&times;</button>
+            </div>
+            <div class="auth-body">
+                <form id="login-form" class="auth-form">
+                    <div class="form-group">
+                        <label for="login-username" class="form-label">Username</label>
+                        <input type="text" id="login-username" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="login-password" class="form-label">Password</label>
+                        <input type="password" id="login-password" class="form-control" required>
+                    </div>
+                    <button type="submit" class="btn btn--primary btn--full-width">Login</button>
+                </form>
+                <div class="auth-footer">
+                    <p>Don't have an account? <button id="switch-to-signup" class="link-btn">Sign up here</button></p>
+                </div>
+                <div id="login-error" class="error-message hidden"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Signup Modal -->
+    <div id="signup-modal" class="modal hidden">
+        <div class="modal-content auth-modal">
+            <div class="auth-header">
+                <h3>Join ZEN-MIND</h3>
+                <button id="close-signup" class="close-btn">&times;</button>
+            </div>
+            <div class="auth-body">
+                <!-- User Type Selection -->
+                <div id="user-type-selection" class="user-type-section">
+                    <h4>I am a:</h4>
+                    <div class="user-type-buttons">
+                        <button type="button" id="select-therapist" class="btn btn--outline user-type-btn">
+                            <span class="user-type-icon">👩‍⚕️</span>
+                            <span>Therapist</span>
+                        </button>
+                        <button type="button" id="select-teenager" class="btn btn--outline user-type-btn">
+                            <span class="user-type-icon">🧑‍🎓</span>
+                            <span>Teenager</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Therapist Signup Form -->
+                <form id="therapist-signup-form" class="auth-form hidden">
+                    <h4>Therapist Registration</h4>
+                    <div class="form-group">
+                        <label for="therapist-name" class="form-label">Full Name *</label>
+                        <input type="text" id="therapist-name" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="therapist-qualification" class="form-label">Qualification *</label>
+                        <input type="text" id="therapist-qualification" class="form-control" placeholder="e.g., Ph.D. Clinical Psychology" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="therapist-experience" class="form-label">Experience *</label>
+                        <input type="text" id="therapist-experience" class="form-control" placeholder="e.g., 8 years" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="therapist-mobile" class="form-label">Mobile Number *</label>
+                        <input type="tel" id="therapist-mobile" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="therapist-email" class="form-label">Email *</label>
+                        <input type="email" id="therapist-email" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="therapist-whatsapp" class="form-label">WhatsApp Number *</label>
+                        <input type="tel" id="therapist-whatsapp" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="therapist-residential" class="form-label">Residential Address *</label>
+                        <textarea id="therapist-residential" class="form-control" rows="3" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="therapist-hospital" class="form-label">Hospital/Clinic Address *</label>
+                        <textarea id="therapist-hospital" class="form-control" rows="3" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="therapist-password" class="form-label">Password *</label>
+                        <input type="password" id="therapist-password" class="form-control" required>
+                    </div>
+                    <button type="submit" class="btn btn--primary btn--full-width">Register as Therapist</button>
+                    <button type="button" id="back-to-user-type" class="btn btn--outline btn--full-width">Back</button>
+                </form>
+
+                <!-- Teenager Signup Form -->
+                <form id="teenager-signup-form" class="auth-form hidden">
+                    <h4>Teenager Registration</h4>
+                    <div class="form-group">
+                        <label for="teenager-username" class="form-label">Username *</label>
+                        <input type="text" id="teenager-username" class="form-control" required>
+                        <small class="form-text">3-20 characters, alphanumeric only</small>
+                    </div>
+                    <div class="form-group">
+                        <label for="teenager-password" class="form-label">Password *</label>
+                        <input type="password" id="teenager-password" class="form-control" required>
+                        <small class="form-text">Minimum 6 characters</small>
+                    </div>
+                    <button type="submit" class="btn btn--primary btn--full-width">Register as Teenager</button>
+                    <button type="button" id="back-to-user-type-teen" class="btn btn--outline btn--full-width">Back</button>
+                </form>
+
+                <div class="auth-footer">
+                    <p>Already have an account? <button id="switch-to-login" class="link-btn">Login here</button></p>
+                </div>
+                <div id="signup-error" class="error-message hidden"></div>
+                <div id="signup-success" class="success-message hidden"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Profile Modal -->
+    <div id="profile-modal" class="modal hidden">
+        <div class="modal-content profile-modal">
+            <div class="profile-header">
+                <h3>My Profile</h3>
+                <button id="close-profile" class="close-btn">&times;</button>
+            </div>
+            <div class="profile-body">
+                <!-- Therapist Profile -->
+                <div id="therapist-profile" class="profile-content hidden">
+                    <form id="therapist-profile-form" class="profile-form">
+                        <div class="form-group">
+                            <label for="profile-therapist-name" class="form-label">Full Name</label>
+                            <input type="text" id="profile-therapist-name" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="profile-therapist-qualification" class="form-label">Qualification</label>
+                            <input type="text" id="profile-therapist-qualification" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="profile-therapist-experience" class="form-label">Experience</label>
+                            <input type="text" id="profile-therapist-experience" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="profile-therapist-mobile" class="form-label">Mobile Number</label>
+                            <input type="tel" id="profile-therapist-mobile" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="profile-therapist-email" class="form-label">Email</label>
+                            <input type="email" id="profile-therapist-email" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="profile-therapist-whatsapp" class="form-label">WhatsApp Number</label>
+                            <input type="tel" id="profile-therapist-whatsapp" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="profile-therapist-residential" class="form-label">Residential Address</label>
+                            <textarea id="profile-therapist-residential" class="form-control" rows="3" required></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="profile-therapist-hospital" class="form-label">Hospital/Clinic Address</label>
+                            <textarea id="profile-therapist-hospital" class="form-control" rows="3" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn--primary">Update Profile</button>
+                    </form>
+                </div>
+
+                <!-- Teenager Profile -->
+                <div id="teenager-profile" class="profile-content hidden">
+                    <form id="teenager-profile-form" class="profile-form">
+                        <div class="form-group">
+                            <label for="profile-teenager-username" class="form-label">Username</label>
+                            <input type="text" id="profile-teenager-username" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="profile-teenager-picture" class="form-label">Profile Picture URL</label>
+                            <input type="url" id="profile-teenager-picture" class="form-control" placeholder="https://example.com/picture.jpg">
+                        </div>
+                        <div class="form-group">
+                            <label for="profile-teenager-mobile" class="form-label">Mobile Number</label>
+                            <input type="tel" id="profile-teenager-mobile" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="profile-teenager-address" class="form-label">Address</label>
+                            <textarea id="profile-teenager-address" class="form-control" rows="3"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="profile-teenager-gender" class="form-label">Gender</label>
+                            <select id="profile-teenager-gender" class="form-control">
+                                <option value="">Select Gender</option>
+                                <option value="male">Male</option>
+                                <option value="female">Female</option>
+                                <option value="non-binary">Non-binary</option>
+                                <option value="prefer-not-to-say">Prefer not to say</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn btn--primary">Update Profile</button>
+                    </form>
+                </div>
+                <div id="profile-success" class="success-message hidden"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Chat Modal -->
+    <div id="chat-modal" class="modal hidden">
+        <div class="modal-content chat-container">
+            <div class="chat-header">
+                <h3>ZEN-MIND Support</h3>
+                <button id="close-chat" class="close-btn">&times;</button>
+            </div>
+            <div class="chat-messages" id="chat-messages">
+                <div class="message bot-message">
+                    <div class="message-content">
+                        <p>Hi there! I'm here to provide a safe, supportive space for you. Before we begin, please remember that while I can offer guidance and support, I'm not a replacement for professional help.</p>
+                        <p><strong>In case of emergency, please contact:</strong></p>
+                        <p>• Suicide & Crisis Lifeline: <strong>988</strong></p>
+                        <p>• Crisis Text Line: Text <strong>HOME to 741741</strong></p>
+                        <p>How are you feeling today?</p>
+                    </div>
+                </div>
+            </div>
+            <div class="chat-input-container">
+                <input type="text" id="chat-input" placeholder="Type your message here..." class="chat-input">
+                <button id="send-btn" class="btn btn--primary">Send</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Emergency Modal -->
+    <div id="emergency-modal" class="modal hidden">
+        <div class="modal-content emergency-content">
+            <div class="emergency-header">
+                <h3>Emergency Resources</h3>
+                <button id="close-emergency" class="close-btn">&times;</button>
+            </div>
+            <div class="emergency-info">
+                <div class="emergency-item urgent">
+                    <h4>Immediate Crisis Support</h4>
+                    <p><strong>Suicide & Crisis Lifeline:</strong> <a href="tel:988" class="crisis-link">988</a></p>
+                    <p><strong>Crisis Text Line:</strong> Text HOME to 741741</p>
+                    <p class="emergency-note">Available 24/7 - Free and confidential</p>
+                </div>
+                
+                <div class="emergency-item">
+                    <h4>Additional Resources</h4>
+                    <p><strong>National Suicide Prevention Lifeline:</strong> 1-800-273-8255</p>
+                    <p><strong>Teen Line:</strong> 1-800-852-8336 (6-10 PM PST)</p>
+                    <p><strong>Crisis Chat:</strong> suicidepreventionlifeline.org</p>
+                </div>
+                
+                <div class="emergency-reminder">
+                    <p><strong>Remember:</strong> You are not alone. Help is available, and your life has value.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
